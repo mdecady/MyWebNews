@@ -1,0 +1,689 @@
+﻿/*
+Theme Name: Newspaper Design
+Author: Марина и Мария
+Description: Лабораторная работа 6
+Version: 1.0
+*/
+
+:root {
+    --accent: #5a0d0d;
+    --dark: #1a1613;
+    --beige: #fdfaf3;
+    --radius: 25px; /* Размер закругления */
+}
+
+body {
+    background-color: #f0e6d2;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #2c2c2c;
+}
+
+/* HEADER */
+.main-header {
+    background: var(--dark);
+    padding: 15px 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+.logo {
+    font-size: 2.2rem;
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu-button {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 50px; 
+    transition: 0.3s;
+}
+
+    .menu-button:hover {
+        background: var(--accent);
+        transform: scale(1.05);
+    }
+
+/* ВЫПЛЫВАЮЩЕЕ МЕНЮ */
+.sidebar {
+    background-color: var(--dark) !important;
+    border-left: 8px solid var(--accent);
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+}
+
+    .sidebar .offcanvas-title {
+        font-size: 1.8rem;
+        color: var(--beige) !important;
+        letter-spacing: 1px;
+        font-weight: bold; 
+    }
+
+/* КАРТОЧКИ С ЭФФЕКТАМИ */
+.main-news-card {
+    background: var(--beige);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: var(--radius); 
+    overflow: hidden; 
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+    /* ЭФФЕКТ УВЕЛИЧЕНИЯ ДЛЯ БОЛЬШОЙ КАРТОЧКИ */
+    .main-news-card:hover {
+        transform: scale(1.02); 
+        box-shadow: 0 20px 40px rgba(0,0,0,0.15); 
+    }
+
+.img-wrapper {
+    overflow: hidden;
+}
+
+    .img-wrapper img {
+        width: 100%;
+        max-height: 550px;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+/* ЭФФЕКТ УВЕЛИЧЕНИЯ КАРТИНКИ ВНУТРИ */
+.main-news-card:hover .img-wrapper img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 40px;
+}
+
+    .card-content h1 a {
+        color: var(--dark);
+        text-decoration: none;
+    }
+
+/* МАЛЕНЬКИЕ КАРТОЧКИ */
+.small-news-item {
+    background: var(--beige);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-top: 6px solid var(--accent);
+    padding: 30px;
+    height: 100%;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+}
+
+    /* ЭФФЕКТ УВЕЛИЧЕНИЯ ДЛЯ МАЛЕНЬКИХ */
+    .small-news-item:hover {
+        transform: translateY(-10px) scale(1.03); /* Всплывает вверх и увеличивается */
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .small-news-item h4 a {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+/* ВЫПЛЫВАЮЩЕЕ МЕНЮ ССЫЛКИ */
+.sidebar-menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+    .sidebar-menu a:hover {
+        background: var(--accent);
+        padding-left: 35px;
+    }
+
+.sidebar .offcanvas-header {
+    padding-top: 50px !important; 
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.sidebar .offcanvas-title {
+    font-size: 1.8rem;
+    color: var(--beige) !important;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0; 
+}
+
+.sidebar .btn-close {
+    margin-top: 5px; 
+    opacity: 0.8;
+}
+
+.news-content-text {
+    line-height: 1.8;   
+    font-size: 1.2rem;
+    text-align: justify;
+    color: #333; 
+    margin-top: 30px;  
+    margin-bottom: 40px;
+    word-spacing: 1px  
+}
+
+.news-content-text br {
+    display: block;
+    margin-bottom: 15px;
+    content: "";
+}
+
+main {
+    min-height: 75vh;
+}
+
+footer {
+    background: var(--dark); 
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px; 
+}
+
+.contacts-container {
+    background: var(--beige);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: var(--radius);
+}
+
+.contacts-header {
+    color: var(--accent);
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 1px;
+}
+
+.contacts-divider {
+    border: none;
+    height: 2px;
+    background-color: #000;
+    opacity: 1;
+}
+
+.contacts-info-block {
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+.contacts-info-block strong {
+    color: var(--dark);
+}
+
+/* Стили для слайдера ЛР4 */
+.slider-wrapper {
+    position: relative;
+    height: 400px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: #000;
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+}
+
+.my-slide {
+    display: none; 
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.my-slide.active {
+    display: block; 
+}
+
+.my-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.slide-info {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    color: #fff;
+    z-index: 5;
+}
+
+.slide-info h3 a {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.slider-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+}
+
+.slider-control:hover { background: var(--accent); }
+.slider-control.prev { left: 10px; }
+.slider-control.next { right: 10px; }
+
+.pagination-wrapper .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.pagination-wrapper a, .pagination-wrapper span {
+    padding: 10px 15px;
+    background: var(--dark);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.pagination-wrapper .current {
+    background: var(--accent);
+}
+
+/* ===== Отдельная страница фотоконкурса ===== */
+
+.photo-contest-page {
+    background: #f3eadb;
+    min-height: 100vh;
+}
+
+.photo-contest-hero {
+    background: linear-gradient(135deg, #17130f, #5a3927);
+    color: #ffffff;
+    padding: 80px 24px 70px;
+}
+
+.photo-contest-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.photo-contest-tag {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.photo-contest-hero h1 {
+    margin: 0 0 20px;
+    font-size: 58px;
+    line-height: 1.05;
+    font-weight: 700;
+}
+
+.photo-contest-hero p {
+    max-width: 760px;
+    margin: 0;
+    color: #f1dfc4;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.photo-contest-section {
+    padding: 55px 24px 90px;
+}
+
+.photo-contest-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.photo-contest-card-main {
+    background: #fffaf2;
+    border-radius: 28px;
+    padding: 38px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.13);
+}
+
+/* Вывод плагина фотоконкурсов */
+
+.pc-contests h2 {
+    margin: 0 0 24px;
+    font-size: 36px;
+    color: #1d1712;
+}
+
+.pc-contests p {
+    font-size: 18px;
+    color: #4b3c31;
+}
+
+.pc-contest-card {
+    background: #ffffff;
+    border: 1px solid #e2d2bd;
+    border-radius: 22px;
+    padding: 26px;
+    margin-bottom: 22px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.07);
+}
+
+.pc-contest-card h3 {
+    margin: 0 0 12px;
+    font-size: 28px;
+    color: #1d1712;
+}
+
+.pc-contest-card p {
+    margin: 0 0 12px;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .photo-contest-hero {
+        padding: 55px 18px 45px;
+    }
+
+    .photo-contest-hero h1 {
+        font-size: 38px;
+    }
+
+    .photo-contest-hero p {
+        font-size: 17px;
+    }
+
+    .photo-contest-card-main {
+        padding: 24px;
+        border-radius: 20px;
+    }
+}
+
+/* ===== ШАПКА: кнопки Фотоконкурсы / Войти / Выйти / Разделы ===== */
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.main-header .header-actions a.header-btn,
+.main-header .header-actions button.menu-button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    padding: 7px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+    border-radius: 50px;
+    background: transparent !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 0.95rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1;
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.main-header .header-actions a.header-btn:link,
+.main-header .header-actions a.header-btn:visited,
+.main-header .header-actions a.header-btn:hover,
+.main-header .header-actions a.header-btn:active {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
+.main-header .header-actions a.header-btn:hover,
+.main-header .header-actions button.menu-button:hover {
+    background: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+/* Страницы: Фотоконкурсы, Контакты и другие обычные страницы */
+.page-content-card {
+    background: var(--beige);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.page-content-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Встраивание модуля фотоконкурсов в новостную тему */
+.page-content-text .pc-wrap {
+    max-width: 100%;
+}
+
+.page-content-text .pc-card,
+.page-content-text .pc-form,
+.page-content-text .pc-content-card {
+    border-radius: 20px;
+}
+
+/* Адаптивная шапка */
+@media (max-width: 992px) {
+    .main-header .container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .header-actions {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-header .header-actions a.header-btn,
+    .main-header .header-actions button.menu-button {
+        padding: 7px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ===== Внутренние формы входа и регистрации ===== */
+
+.auth-card {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 42px;
+    background: var(--beige);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: var(--radius);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.auth-card h2 {
+    margin: 0 0 14px;
+    color: var(--dark);
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.auth-description {
+    margin-bottom: 28px;
+    color: #5f5348;
+    font-size: 1.05rem;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.auth-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-weight: bold;
+    color: var(--dark);
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d2c4b0;
+    border-radius: 14px;
+    background: #ffffff;
+    color: #2c2c2c;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1rem;
+    outline: none;
+}
+
+.auth-form input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(90, 13, 13, 0.12);
+}
+
+.auth-checkbox {
+    flex-direction: row !important;
+    align-items: center;
+    gap: 10px !important;
+    font-weight: normal !important;
+}
+
+.auth-checkbox input {
+    width: 18px;
+    height: 18px;
+}
+
+.auth-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 46px;
+    padding: 12px 22px;
+    border: 1px solid var(--dark);
+    border-radius: 50px;
+    background: var(--dark);
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.auth-button:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+.auth-button-secondary {
+    background: transparent;
+    color: var(--dark) !important;
+}
+
+.auth-button-secondary:hover {
+    background: var(--dark);
+    color: #ffffff !important;
+}
+
+.auth-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.auth-bottom-text {
+    margin: 24px 0 0;
+    color: #5f5348;
+}
+
+.auth-bottom-text a {
+    color: var(--accent);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.auth-bottom-text a:hover {
+    text-decoration: underline;
+}
+
+.auth-message {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    font-weight: bold;
+}
+
+.auth-message-error {
+    background: #fff1f1;
+    color: #8a1111;
+    border: 1px solid #e4b5b5;
+}
+
+@media (max-width: 576px) {
+    .auth-card {
+        padding: 28px 22px;
+    }
+
+    .auth-card h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Более спокойный вид страницы фотоконкурсов */
+.pc-wrap .pc-hero {
+    background: #fffaf2 !important;
+    color: var(--dark) !important;
+    border: 1px solid rgba(0,0,0,0.1) !important;
+    box-shadow: none !important;
+}
+
+.pc-wrap .pc-hero__tag {
+    color: var(--accent) !important;
+    letter-spacing: 0.08em;
+}
+
+.pc-wrap .pc-hero h1 {
+    color: var(--dark) !important;
+}
+
+.pc-wrap .pc-hero p {
+    color: #4b3c31 !important;
+}
+
+.pc-empty,
+.pc-info {
+    background: #ffffff !important;
+    border: 1px solid #e2d2bd !important;
+    box-shadow: none !important;
+}
